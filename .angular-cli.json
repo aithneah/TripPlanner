@@ -9,7 +9,8 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "back3.jpg"
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -19,9 +20,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "css/bootstrap.css",
+        "css/font-awesome.css",
+        "css/nya-bs-select.min.css"
       ],
-      "scripts": [],
+      "scripts": ["assets/bootstrap.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

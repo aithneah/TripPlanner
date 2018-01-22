@@ -1,0 +1,32 @@
+.text-heading{
+    color:#333;
+}
+
+.text-fancy{
+    font-family: 'Sofia', cursive;
+}
+
+.text-paragraph{
+    color:#333;
+}
+
+.text-white{
+    color: #fff;
+}
+
+.vertical-center {
+    min-height: 100%; /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+}
+
+.dark-background
+{
+    background: #333 none;
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;
+}

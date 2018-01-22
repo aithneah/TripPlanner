@@ -1,0 +1,266 @@
+<div class="container">
+  <div class="row vertical-center">
+    <div class="col-lg-10 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-lg-offset-1 col-xs-10 col-xs-offset-1">
+      <h1>Complete these 4 simple steps to plan your trip</h1>
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <!-- First Panel -->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="panel-first-step">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion"
+                 href="#collapseOne" aria-expanded="true"
+                 aria-controls="collapseOne">First Step - Define people!</a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+               aria-labelledby="panel-first-step">
+            <div class="panel-body">
+              <form name="myForm">
+                <div class="input-group">
+                  <span class="input-group-addon" id="tpmate-name" >Name</span>
+                  <input  type="text" class="form-control" placeholder="Type your tripmate name"
+                          aria-describedby="basic-addon1" required>
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon" id="tpmate-birthdate" >Birthday Date</span>
+                  <input type="date" class="form-control" placeholder="Type your tripmate bday date"
+                         aria-describedby="basic-addon1">
+                </div>
+                <!--<select class="selectpicker" data-live-search="true" title="Diet" required="required" ng-model="mtctrl.user.diet">-->
+                <!--<option value="standard">Standard</option>-->
+                <!--&lt;!&ndash;<option>Standard</option>&ndash;&gt;-->
+                <!--<option value="vege">Vege</option>-->
+                <!--</select>-->
+                <div class="input-group">
+                  <span class="input-group-addon" id="tpmate-diet" >Tripmate diet:</span>&nbsp;
+                  <label class="radio-inline"><input type="radio" name="optradio">Classic</label>
+                  <label class="radio-inline"><input type="radio" name="optradio">Vegan</label>
+                  <label class="radio-inline"><input type="radio" name="optradio">Vege</label>
+                </div>
+                <input type="submit"  class="btn btn-primary btn-sm">
+              </form>
+              <ul id="tpMt-list">
+                <li>
+                  <div class="view">
+                    <p>{{tpmt.name}} on {{tpmt.diet}} diet, born {{tpmt.date}}</p>
+                    <!--<button type="button" ng-click="mtctrl.remove(tpmt.id)" class="btn btn-danger custom-width">Remove</button>-->
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!--/.panel-body-->
+          </div>
+          <!--/#collapseOne-->
+        </div>
+        <!--/First Panel-->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="panel-sec-step">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion"
+                 href="#collapseTwo" aria-expanded="false"
+                 aria-controls="collapseTwo">Second Step - Select Date!</a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+               aria-labelledby="panel-sec-step">
+            <div class="panel-body">
+              <form ng-submit="mtctrl.setDate()">
+                <div class="input-group">
+                  <span class="input-group-addon" id="tpstart-date">Start Date</span>
+                  <input type="date" class="form-control" placeholder="Type your start date"
+                         aria-describedby="basic-addon1" ng-model="mtctrl.trip.date">
+                  <div class="input-group-btn">
+                    <input type="submit"  value="Select" class="btn btn-primary btn-sm">
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!--/.panel-body-->
+          </div>
+          <!--/#collapseTwo-->
+        </div>
+        <!--/Second panel-->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="panel-tri-step">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion"
+                 href="#collapseThree" aria-expanded="false"
+                 aria-controls="collapseThree">Third Step - Set your Destination/Target/purpose!</a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+               aria-labelledby="panel-tri-step">
+            <div class="panel-body">
+              <div class="row">
+                <form>
+                  <div class="col-lg-5">
+                    <!--<select id="s2" class="selectpicker" data-live-search="true" title="Country" required="required">-->
+                    <!--<option ng-repeat="ctry1 in mtctrl.countries track by $index"  ng-click="fetchCitiesOfCountry(ctry1.id)">{{ctry1.name}}</option>-->
+                    <!--</select>-->
+                    <div class="input-group">
+                      <span class="input-group-addon" id="tpstart-country">Select Country:</span>
+                      <select class="form-control">
+                        <option>1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-5">
+                    <!--<select class="selectpicker" data-live-search="true" title="City" required="required" ng-model="mtctrl.midpoint">-->
+                    <!--<option ng-repeat="cty1 in mtctrl.cities" value="{{cty1}}">{{cty1.name}}</option>-->
+                    <!--</select>-->
+                    <div class="input-group">
+                      <span class="input-group-addon" id="tpstart-country">Select City:</span>
+                      <select class="form-control">
+                        <option>1</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-2">
+                    <button ng-click="mtctrl.addCity()" type="button" class="btn btn-primary center-block">Add</button>
+                  </div>
+                </form>
+              </div>
+              <!-- End Point -->
+            </div>
+            <!--/.panel-body-->
+          </div>
+          <!--/#collapseTrhree-->
+        </div>
+        <!--/Third panel-->
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="panel-4-step">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#accordion"
+                 href="#collapseFour" aria-expanded="false"
+                 aria-controls="collapseFour">Step Four - Add some details!</a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+               aria-labelledby="panel-4-step">
+            <div class="panel-body">
+              <ul>
+
+
+
+                <li ng-repeat="loc in mtctrl.locations">
+                  <a data-toggle="modal" data-target="#locationModal" ng-click="">{{loc.name}}</a>
+                  <a data-toggle="modal" data-target="#transportModal" ng-click="mtctrl.fetchTransports(loc.id,loc[$index +1].id)"><i class="fa fa-arrows-v" aria-hidden="true"></i></a>
+                  <!-- Modal location -->
+                  <div class="modal fade" id="locationModal" tabindex="-1" role="dialog" aria-labelledby="locationModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="locationModalLabel">Location Details</h4>
+                        </div>
+                        <div class="modal-body">
+                          <form ng-submit="mtctrl.locationSubmit()">
+                            <div class="input-group">
+                              <span class="input-group-addon" id="locationDur" >Duration</span>
+                              <input  type="number" class="form-control" placeholder="Type your how long will you stay here (days)"
+                                      aria-describedby="basic-addon1" ng-model="mtctrl.location.days" required>
+                              <div class="has-error" ng-show="myForm.$dirty">
+                                <span ng-show="myForm.uname.$error.required">This is a required field</span>
+                              </div>
+                              <div class="input-group">
+                                <span class="input-group-addon" id="tpstart-acctype">Select Acomodation type:</span>
+                                <select class="form-control">
+                                  <option>1</option>
+                                </select>
+                              </div>
+                              <span class="input-group-addon" id="locationbaths" >Bathrooms</span>
+                              <input  type="number" class="form-control" placeholder="Type number of bathrooms"
+                                      aria-describedby="basic-addon1" ng-model="mtctrl.location.bathrooms" required>
+                              <div class="has-error" ng-show="myForm.$dirty">
+                                <span ng-show="myForm.uname.$error.required">This is a required field</span>
+                              </div>
+                              <div class="input-group">
+                                <span class="input-group-addon" id="tpstart-food">Select Food type:</span>
+                                <select class="form-control">
+                                  <option>1</option>
+                                </select>
+                              </div>
+                              <div class="input-group">
+                                <span class="input-group-addon" id="tpstart-country">Select Type of Jurney:</span>
+                                <select class="form-control">
+                                  <option>1</option>
+                                </select>
+                              </div>
+                              <div class="input-group">
+                                <span class="input-group-addon" id="tpstart-country">Select City transport type:</span>
+                                <select class="form-control">
+                                  <option>1</option>
+                                </select>
+                              </div>
+                              <form tittle="Additional cost">
+                                <div class="input-group">
+                                  <span class="input-group-addon" id="additionalCost" >Tittle</span>
+                                  <input  type="text" class="form-control" placeholder="Type tittle of your additional cost"
+                                          aria-describedby="basic-addon1" ng-model="mtctrl.location.additional.tittle" required>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                    <span ng-show="myForm.uname.$error.required">This is a required field</span>
+                                  </div>
+                                  <span class="input-group-addon" id="additionalCostValue" >Cost</span>
+                                  <input  type="number" class="form-control" placeholder="Type tittle of your additional cost"
+                                          aria-describedby="basic-addon1" ng-model="mtctrl.location.additional.cost" required>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                    <span ng-show="myForm.uname.$error.required">This is a required field</span>
+                                  </div>
+                                  <div class="input-group">
+                                    <span class="input-group-addon" id="tpstart-country">Currency:</span>
+                                    <select class="form-control">
+                                      <option>1</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <button ng-click="mtctrl.addCost()" type="button" class="btn btn-primary btn-lg center-block">Add Cost</button>
+                              </form>
+                            </div>
+                            <input type="submit"  value="Submit" class="btn btn-primary btn-sm">
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modal transport -->
+                  <div class="modal fade" id="transportModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Transport Details</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div class="input-group">
+                            <span class="input-group-addon" id="tpstart-country">Select Transport Type:</span>
+                            <select class="form-control">
+                              <option>1</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!--/.panel-body-->
+          </div>
+          <!--/#collapseFour-->
+        </div>
+        <!--/Fourth panel-->
+      </div>
+      <button ng-click="mtctrl.submitTrip()" type="button" class="btn btn-default">Submit Trip!</button>
+    </div>
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
