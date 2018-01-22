@@ -3,8 +3,7 @@
 Poniżej instrukcje jak to odpalić. 
 Trzeba mieć NodeJS'a i przez npm wgrać Angular CLI zanim co.
 Więc najpierw ze strony NodeJS pobierz instalator, a później npm install angular-cli.
-
-
+Następnie odpalasz dev server ng serve będać w katalogu projektu, lub npm start.
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.9.
