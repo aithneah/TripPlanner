@@ -64,11 +64,11 @@
           <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
                aria-labelledby="panel-sec-step">
             <div class="panel-body">
-              <form ng-submit="mtctrl.setDate()">
+              <form (ngSubmit)="onDateSubmit(startDateIn.value)">
                 <div class="input-group">
                   <span class="input-group-addon" id="tpstart-date">Start Date</span>
-                  <input type="date" class="form-control" placeholder="Type your start date"
-                         aria-describedby="basic-addon1" ng-model="mtctrl.trip.date">
+                  <input #startDateIn type="date" class="form-control" placeholder="Type your start date"
+                         aria-describedby="basic-addon1" name="startDate">
                   <div class="input-group-btn">
                     <input type="submit"  value="Select" class="btn btn-primary btn-sm">
                   </div>
@@ -99,7 +99,7 @@
                     <!--</select>-->
                     <div class="input-group">
                       <span class="input-group-addon" id="tpstart-country">Select Country:</span>
-                      <select class="form-control" (change)="onCountrySelected($event.target.value)" >
+                      <select #countrySelect class="form-control" (change)="onCountrySelected($event.target.value)" >
                         <option *ngFor="let c of countries" [value]="c.id">{{c.name}}</option>
                       </select>
                     </div>
@@ -109,17 +109,18 @@
                     <!--<option ng-repeat="cty1 in mtctrl.cities" value="{{cty1}}">{{cty1.name}}</option>-->
                     <!--</select>-->
                     <div class="input-group">
-                      <span class="input-group-addon" id="tpstart-country">Select City:</span>
-                      <select class="form-control">
-                        <option>1</option>
+                      <span class="input-group-addon" id="tpstart-city">Select City:</span>
+                      <select #citySelect class="form-control">
+                        <option *ngFor="let cit of countryCities" [value]="cit.id">{{cit.name}}</option>
                       </select>
                     </div>
                   </div>
                   <div class="col-lg-2">
-                    <button ng-click="mtctrl.addCity()" type="button" class="btn btn-primary center-block">Add</button>
+                    <button (click)="addDestinationPoint(countrySelect.value, citySelect.value)" type="button" class="btn btn-primary center-block">Add</button>
                   </div>
                 </form>
               </div>
+              <div class="row"></div>
               <!-- End Point -->
             </div>
             <!--/.panel-body-->

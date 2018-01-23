@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
@@ -11,7 +12,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserDashComponent } from './user-dash/user-dash.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { FinalComponent } from './final/final.component';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {HttpClientModule} from "@angular/common/http";
   ],
   imports: [
     AppRoutingModule,
+    FormsModule,
     BrowserModule,
     HttpClientModule
   ],

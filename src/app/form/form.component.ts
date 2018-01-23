@@ -15,6 +15,10 @@ import 'rxjs/add/operator/catch';
 
 export class FormComponent implements OnInit {
   countries: any;
+  countryCities: any;
+
+  tripCities: any[] = [];
+  startDate: any;
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -25,14 +29,27 @@ export class FormComponent implements OnInit {
       err => {
         console.log('Something went wrong with API get!');
       });
-
+    this.onCountrySelected(1);
   }
 
-  onCountrySelected($event) {
 
+  onCountrySelected(value) {
+    this.http.get('api/cities/country/' + value).subscribe(data => {
+      this.countryCities = data;
+        console.log(this.countryCities);
+    },
+      err => {
+        console.log('Something went wrong with API get!');
+      });
   }
-  // addTraveler(); {
-  //
-  // }
 
+  onDateSubmit(value) {
+    this.startDate = value;
+  }
+
+  addDestinationPoint(countryId, cityId) {
+    this.tripCities.push({countryId, cityId});
+    console.log(this.tripCities);
+  }
 }
+
