@@ -22,6 +22,10 @@ export interface ICountry {
   name: string;
 }
 
+export interface ICountries {
+  countries: Array<ICountry>;
+}
+
 export interface ICity {
   id: number;
   cid: number;

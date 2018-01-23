@@ -11,6 +11,7 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { UserDashComponent } from './user-dash/user-dash.component';
 import { AdminDashComponent } from './admin-dash/admin-dash.component';
 import { FinalComponent } from './final/final.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FinalComponent } from './final/final.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,7 +25,9 @@
         "css/font-awesome.css",
         "css/nya-bs-select.min.css"
       ],
-      "scripts": ["assets/bootstrap.js"],
+      "scripts": [
+        "assets/bootstrap.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -62,6 +64,7 @@
     "class": {
       "spec": false
     },
-    "component": {}
+    "component": {
+    }
   }
 }
