@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Directive, Input, OnInit} from '@angular/core';
 import {ICountries, ICountry} from '../interfaces';
 import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/map';
@@ -12,11 +12,15 @@ import 'rxjs/add/operator/catch';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
 })
-
 export class FormComponent implements OnInit {
+  userNameModel: string;
+  userBDateModel: any;
+  userDietModel: string;
+
+  users: any[]=[];
+
   countries: any;
   countryCities: any;
-
   tripCities: any[] = [];
   startDate: any;
   constructor(private http: HttpClient) { }
@@ -45,11 +49,16 @@ export class FormComponent implements OnInit {
 
   onDateSubmit(value) {
     this.startDate = value;
+    console.log(this.startDate);
   }
 
-  addDestinationPoint(countryId, cityId) {
-    this.tripCities.push({countryId, cityId});
-    console.log(this.tripCities);
+  addDestinationPoint(val) {
+        this.tripCities.push({'id': val});
+        console.log(this.tripCities);
+  }
+
+  onTripmateSubmit() {
+    this.users.push({name: this.userNameModel, bdate: this.userBDateModel, diet: this.userDietModel});
   }
 }
 
